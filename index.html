@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VibeStudio | وكالة إنتاج إعلانات CGI & AI التجارية</title>
+    <meta name="description" content="نحوّل منتجاتك لإعلانات سينمائية تضاعف مبيعاتك بدون تكاليف تصوير تقليدية — متخصصون في الساعات، الملابس، والعطور.">
+
+    <!-- Google Fonts: Cairo (Arabic) & Inter (English) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        ar: ['Cairo', 'sans-serif'],
+                        en: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        obsidian: '#09090b',
+                        card: '#121216',
+                        violetGlow: '#7c3aed',
+                        goldAccent: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-main: #09090b;
+            --accent-indigo: #6366f1;
+            --accent-violet: #8b5cf6;
+            --accent-gold: #f59e0b;
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            background-color: var(--bg-main);
+            color: #f4f4f5;
+            overflow-x: hidden;
+        }
+        html[lang="ar"] body {
+            font-family: 'Cairo', sans-serif;
+        }
+        html[lang="en"] body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Ambient Luxury Mesh Gradients */
+        .hero-mesh {
+            background:
+                radial-gradient(circle at 80% 15%, rgba(124, 58, 237, 0.22) 0%, transparent 45%),
+                radial-gradient(circle at 15% 40%, rgba(245, 158, 11, 0.14) 0%, transparent 45%),
+                radial-gradient(circle at 50% 85%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(24, 24, 27, 0.65);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-gold {
+            background: linear-gradient(145deg, rgba(24, 24, 27, 0.85), rgba(39, 29, 12, 0.55));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            box-shadow: 0 20px 50px -15px rgba(245, 158, 11, 0.2);
+        }
+
+        /* 9:16 Vertical Reel Aspect Ratio & Animated CGI Mockups */
+        .reel-frame {
+            aspect-ratio: 9 / 16;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        @keyframes pulseRing {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            70% { transform: scale(1.25); opacity: 0; }
+            100% { transform: scale(1.25); opacity: 0; }
+        }
+        @keyframes shimmerSweep {
+            0% { transform: translateX(-120%) skewX(-20deg); }
+            100% { transform: translateX(220%) skewX(-20deg); }
+        }
+        @keyframes colorShiftHoodie {
+            0%, 100% { filter: hue-rotate(0deg) brightness(1); }
+            33% { filter: hue-rotate(85deg) brightness(1.08); }
+            66% { filter: hue-rotate(195deg) brightness(1.05); }
+        }
+        .animate-float {
+            animation: floatSlow 4.5s ease-in-out infinite;
+        }
+        .animate-hoodie {
+            animation: floatSlow 4s ease-in-out infinite, colorShiftHoodie 7s infinite;
+        }
+        .pulse-ring::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 9999px;
+            border: 2px solid rgba(245, 158, 11, 0.7);
+            animation: pulseRing 2s infinite;
+        }
+        .shimmer-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 45%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+            animation: shimmerSweep 3.8s infinite;
+        }
+
+        /* Reveal on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-violet-600 selection:text-white">
+
+    <!-- ========================================================= -->
+    <!-- STICKY NAVBAR WITH BILINGUAL SWITCHER                     -->
+    <!-- ========================================================= -->
+    <header class="sticky top-0 z-40 bg-[#09090b]/80 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-3">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-violet-600 to-amber-500 p-[1px] shadow-lg shadow-violet-600/25">
+                    <div class="w-full h-full bg-[#09090b] rounded-[11px] flex items-center justify-center">
+                        <svg class="w-5 h-5 text-amber-400 group-hover:scale-110 transition" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-tight text-white">Vibe<span class="bg-gradient-to-r from-violet-400 to-amber-400 bg-clip-text text-transparent">Studio</span></span>
+                    <span class="block text-[10px] text-zinc-400 font-semibold tracking-wider uppercase" data-i18n="navTagline">CGI & AI Commercials</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-bold text-zinc-300">
+                <a href="#portfolio" class="hover:text-white transition" data-i18n="navPortfolio">أعمالنا</a>
+                <a href="#why-us" class="hover:text-white transition" data-i18n="navWhy">لماذا نحن؟</a>
+                <a href="#workflow" class="hover:text-white transition" data-i18n="navWorkflow">كيف نعمل؟</a>
+                <a href="#pricing" class="hover:text-white transition" data-i18n="navPricing">الباقات</a>
+            </nav>
+
+            <!-- Language Toggle & Direct Book CTA -->
+            <div class="flex items-center gap-2.5">
+                <button onclick="toggleLanguage()" id="lang-toggle-btn" class="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-extrabold text-zinc-200 transition flex items-center gap-1.5">
+                    <span>🌐</span>
+                    <span id="lang-toggle-label">EN</span>
+                </button>
+                <a href="#pricing" class="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-extrabold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-violet-600/25 transition active:scale-95" data-i18n="navCta">
+                    احجز إعلانك
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================================= -->
+    <!-- HERO SECTION                                              -->
+    <!-- ========================================================= -->
+    <section class="hero-mesh relative pt-14 pb-20 sm:pt-24 sm:pb-28 px-4 sm:px-6 border-b border-white/5">
+        <div class="max-w-5xl mx-auto text-center">
+            <!-- Top Luxury Pill -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-bold mb-6 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                <span data-i18n="heroBadge">الجيل الجديد من الإعلانات التجارية في مصر 🇪🇬</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.2] tracking-tight mb-6 max-w-4xl mx-auto" data-i18n="heroTitle">
+                نحوّل منتجاتك لإعلانات سينمائية <span class="bg-gradient-to-r from-violet-400 via-indigo-300 to-amber-400 bg-clip-text text-transparent">تضاعف مبيعاتك</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-base sm:text-xl text-zinc-300/90 max-w-2xl mx-auto leading-relaxed mb-9 font-medium" data-i18n="heroSubtitle">
+                نصنع إعلانات CGI و AI فائقة الواقعية لبراندات الساعات، الملابس، والعطور — بدون استوديوهات مكلفة أو معدات تصوير، والتسليم خلال 48 ساعة فقط.
+            </p>
+
+            <!-- Hero CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 mb-14">
+                <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-zinc-950 font-black text-base shadow-xl shadow-amber-500/20 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                    <span data-i18n="heroBtnPrimary">شاهد أعمالنا</span>
+                    <span>🎬</span>
+                </a>
+                <button onclick="orderPackageWhatsApp('استفسار عام / حجز إعلان')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-extrabold text-base backdrop-blur-md transition flex items-center justify-center gap-2">
+                    <span data-i18n="heroBtnSecondary">احجز إعلانك الآن</span>
+                    <span>🚀</span>
+                </button>
+            </div>
+
+            <!-- Niche Specialization Pills -->
+            <div class="grid grid-cols-3 gap-3 max-w-xl mx-auto">
+                <div class="glass-card rounded-2xl p-3.5 text-center">
+                    <span class="text-2xl block mb-1">⌚️</span>
+                    <span class="text-xs sm:text-sm font-extrabold text-white" data-i18n="nicheWatches">الساعات الفاخرة</span>
+                </div>
+                <div class="glass-card rounded-2xl p-3.5 text-center">
+                    <span class="text-2xl block mb-1">🧥</span>
+                    <span class="text-xs sm:text-sm font-extrabold text-white" data-i18n="nicheClothing">ملابس الـ Streetwear</span>
+                </div>
+                <div class="glass-card rounded-2xl p-3.5 text-center">
+                    <span class="text-2xl block mb-1">🧴</span>
+                    <span class="text-xs sm:text-sm font-extrabold text-white" data-i18n="nichePerfumes">العطور ومستحضراتها</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- INTERACTIVE 9:16 PORTFOLIO SHOWCASE                       -->
+    <!-- ========================================================= -->
+    <section id="portfolio" class="py-20 px-4 sm:px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-10 reveal">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 block mb-2" data-i18n="portEyebrow">معرض الأعمال المختارة</span>
+            <h2 class="text-2xl sm:text-4xl font-black text-white mb-3" data-i18n="portTitle">إعلانات مصممة لخطف الانتباه من أول ثانية</h2>
+            <p class="text-sm sm:text-base text-zinc-400 max-w-xl mx-auto" data-i18n="portDesc">اضغط على أي فيديو لمعاينة الفكرة الإخراجية أو تشغيل المقطع التجريبي مباشرة</p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex items-center justify-center gap-2 sm:gap-3 flex-wrap mb-10 reveal" id="portfolio-filters">
+            <button onclick="filterPortfolio('all')" data-cat="all" class="port-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-extrabold bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-600/25 transition" data-i18n="filterAll">الكل</button>
+            <button onclick="filterPortfolio('watches')" data-cat="watches" class="port-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-extrabold bg-white/5 hover:bg-white/10 text-zinc-300 border border-white/10 transition" data-i18n="filterWatches">ساعات ⌚️</button>
+            <button onclick="filterPortfolio('clothing')" data-cat="clothing" class="port-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-extrabold bg-white/5 hover:bg-white/10 text-zinc-300 border border-white/10 transition" data-i18n="filterClothing">ملابس 🧥</button>
+            <button onclick="filterPortfolio('perfumes')" data-cat="perfumes" class="port-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-extrabold bg-white/5 hover:bg-white/10 text-zinc-300 border border-white/10 transition" data-i18n="filterPerfumes">عطور 🧴</button>
+        </div>
+
+        <!-- 9:16 Vertical Reels Grid -->
+        <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 max-w-5xl mx-auto">
+            <!-- Dynamically rendered via JS -->
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- WHY VIBESTUDIO? COMPARISON SECTION                        -->
+    <!-- ========================================================= -->
+    <section id="why-us" class="py-20 px-4 sm:px-6 bg-zinc-950/70 border-y border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12 reveal">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 block mb-2" data-i18n="whyEyebrow">المقارنة الحاسمة</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white mb-3" data-i18n="whyTitle">لماذا تختار براندات مصر VibeStudio؟</h2>
+                <p class="text-sm sm:text-base text-zinc-400" data-i18n="whyDesc">الفرق بين التصوير التقليدي المكلف وإعلانات الـ CGI الحديثة</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+                <!-- Traditional Shoot Card -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 border-red-500/20 relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg sm:text-xl font-extrabold text-zinc-300" data-i18n="tradTitle">التصوير التقليدي القديم</h3>
+                        <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-bold border border-red-500/20" data-i18n="tradBadge">تكلفة ووقت مهدور</span>
+                    </div>
+                    <ul class="space-y-4 text-sm text-zinc-400">
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400 font-black mt-0.5">✕</span>
+                            <span data-i18n="trad1">تكلفة إيجار استوديو، موديلز، ومعدات تصل لـ 15,000+ جنيه للإعلان الواحد.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400 font-black mt-0.5">✕</span>
+                            <span data-i18n="trad2">انتظار من أسبوعين لشهر كامل للتصوير والمونتاج والتعديلات.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400 font-black mt-0.5">✕</span>
+                            <span data-i18n="trad3">أفكار مكررة يمر عليها العميل في ثانية بدون أي تفاعل (Low CTR).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400 font-black mt-0.5">✕</span>
+                            <span data-i18n="trad4">صعوبة تغيير الألوان أو الخلفيات بعد انتهاء يوم التصوير.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- VibeStudio CGI/AI Card -->
+                <div class="glass-card-gold rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+                    <div class="shimmer-bar"></div>
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg sm:text-xl font-black text-white">VibeStudio CGI & AI ⚡️</h3>
+                        <span class="px-3 py-1 rounded-full bg-amber-500 text-zinc-950 text-xs font-black" data-i18n="vibeBadge">الأذكى والأسرع</span>
+                    </div>
+                    <ul class="space-y-4 text-sm text-zinc-200 font-medium">
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400 font-black mt-0.5">✓</span>
+                            <span data-i18n="vibe1"><strong>توفير حتى 70% من الميزانية:</strong> توجيه كامل لفلوسك في الإعلانات الممولة (Ads).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400 font-black mt-0.5">✓</span>
+                            <span data-i18n="vibe2"><strong>تسليم فائق السرعة خلال 48 ساعة:</strong> ابعت صور منتجك بالموبايل واستلم إعلانك جاهز.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400 font-black mt-0.5">✓</span>
+                            <span data-i18n="vibe3"><strong>إبداع بصري بلا حدود:</strong> تفكيك ساعات في الهواء، هوديز تغير ألوانها، وعطور وسط الطبيعة.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400 font-black mt-0.5">✓</span>
+                            <span data-i18n="vibe4"><strong>أعلى عائد إعلاني (High ROAS):</strong> هوك بصري (Hook) يوقف سكرول العميل في أول ثانيتين.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 4-STEP WORKFLOW ("كيف نعمل؟")                              -->
+    <!-- ========================================================= -->
+    <section id="workflow" class="py-20 px-4 sm:px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-12 reveal">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-violet-400 block mb-2" data-i18n="workEyebrow">خطوات بسيطة وسريعة</span>
+            <h2 class="text-2xl sm:text-4xl font-black text-white mb-3" data-i18n="workTitle">كيف نعمل؟ (من صورة موبايل لإعلان عالمي)</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
+            <!-- Step 1 -->
+            <div class="glass-card rounded-3xl p-6 relative group hover:border-violet-500/40 transition">
+                <div class="w-11 h-11 rounded-2xl bg-violet-500/15 border border-violet-500/30 text-violet-400 font-black text-lg flex items-center justify-center mb-4">1</div>
+                <h3 class="text-base font-extrabold text-white mb-2" data-i18n="step1Title">أرسل صور منتجك بالموبايل</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="step1Desc">صور منتجك بإضاءة واضحة من هاتفك وابعتها لينا على واتساب مع اللوجو الخاص بالبراند.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="glass-card rounded-3xl p-6 relative group hover:border-violet-500/40 transition">
+                <div class="w-11 h-11 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 text-indigo-400 font-black text-lg flex items-center justify-center mb-4">2</div>
+                <h3 class="text-base font-extrabold text-white mb-2" data-i18n="step2Title">بناء المشهد السينمائي بالـ CGI</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="step2Desc">نولّد مشاهد 3D وحركة كاميرا مستحيلة التصوير واقعياً تبرز فخامة وخامة منتجك.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="glass-card rounded-3xl p-6 relative group hover:border-violet-500/40 transition">
+                <div class="w-11 h-11 rounded-2xl bg-amber-500/15 border border-amber-500/30 text-amber-400 font-black text-lg flex items-center justify-center mb-4">3</div>
+                <h3 class="text-base font-extrabold text-white mb-2" data-i18n="step3Title">مونتاج ومؤثرات صوتية</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="step3Desc">تقطيع سريع (Speed Ramp) متزامن مع مؤثرات صوتية عميقة ونصوص بيعية تشد العميل.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="glass-card rounded-3xl p-6 relative group hover:border-emerald-500/40 transition">
+                <div class="w-11 h-11 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-black text-lg flex items-center justify-center mb-4">4</div>
+                <h3 class="text-base font-extrabold text-white mb-2" data-i18n="step4Title">استلام الفيديو خلال 48 ساعة</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="step4Desc">تستلم الفيديو بصيغة 9:16 جاهز للنشر فوراً على Reels و TikTok وحملات الممول.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- TRANSPARENT PACKAGES & PRICING IN EGP                     -->
+    <!-- ========================================================= -->
+    <section id="pricing" class="py-20 px-4 sm:px-6 bg-zinc-950/80 border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14 reveal">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 block mb-2" data-i18n="priceEyebrow">استثمار ذكي لبراندك</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white mb-3" data-i18n="priceTitle">باقات الإنتاج الإعلاني (بالجنيه المصري)</h2>
+                <p class="text-sm sm:text-base text-zinc-400" data-i18n="priceDesc">اختر الباقة المناسبة لحجم مبيعاتك وابدأ التنفيذ اليوم عبر واتساب</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 items-stretch reveal">
+                <!-- Package 1: Starter -->
+                <div class="glass-card rounded-3xl p-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-zinc-400">Starter</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 text-zinc-300 text-xs font-bold" data-i18n="pkg1Tag">للتجربة والانطلاق</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-2" data-i18n="pkg1Name">باقة التجربة</h3>
+                        <p class="text-xs text-zinc-400 mb-6" data-i18n="pkg1Sub">مثالية لاختبار قوة إعلانات الـ CGI على منتجك الأكثر مبيعاً.</p>
+                        
+                        <div class="mb-6 pb-6 border-b border-white/10">
+                            <span class="text-4xl font-black text-white">1,800</span>
+                            <span class="text-sm font-extrabold text-amber-400 mr-1" data-i18n="currency">ج.م</span>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-zinc-300 mb-8">
+                            <li class="flex items-center gap-2.5"><span class="text-violet-400 font-bold">✓</span><span data-i18n="pkg1F1"><strong>2 فيديو Reels</strong> إعلاني احترافي (9:16)</span></li>
+                            <li class="flex items-center gap-2.5"><span class="text-violet-400 font-bold">✓</span><span data-i18n="pkg1F2">مشاهد CGI & AI مخصصة لمنتجك</span></li>
+                            <li class="flex items-center gap-2.5"><span class="text-violet-400 font-bold">✓</span><span data-i18n="pkg1F3">هندسة صوتية + كتابة نصوص بيعية</span></li>
+                            <li class="flex items-center gap-2.5"><span class="text-violet-400 font-bold">✓</span><span data-i18n="pkg1F4">تسليم أول فيديو خلال 48 ساعة</span></li>
+                        </ul>
+                    </div>
+
+                    <button onclick="orderPackageWhatsApp('باقة التجربة (2 ريلز - 1,800 ج.م)')" class="w-full py-3.5 px-5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-extrabold text-sm transition flex items-center justify-center gap-2">
+                        <span data-i18n="orderBtn">اطلب الباقة عبر واتساب</span>
+                        <span>💬</span>
+                    </button>
+                </div>
+
+                <!-- Package 2: Growth (Most Popular) -->
+                <div class="glass-card-gold rounded-3xl p-7 flex flex-col justify-between relative transform lg:-translate-y-3">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-400 text-zinc-950 text-xs font-black px-4 py-1 rounded-full shadow-lg whitespace-nowrap" data-i18n="mostPopular">
+                        🔥 الأكثر طلباً للبراندات
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between mb-4 mt-1">
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-amber-400">Growth</span>
+                            <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 text-xs font-bold border border-amber-500/30" data-i18n="pkg2Tag">توفير 20%</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-2" data-i18n="pkg2Name">باقة النمو</h3>
+                        <p class="text-xs text-zinc-300 mb-6" data-i18n="pkg2Sub">الاختيار الأفضل لحملات الإعلانات الممولة واختبار أكتر من Hook بيعي.</p>
+                        
+                        <div class="mb-6 pb-6 border-b border-amber-500/20">
+                            <span class="text-4xl font-black text-white">3,400</span>
+                            <span class="text-sm font-extrabold text-amber-400 mr-1" data-i18n="currency">ج.م</span>
+                            <span class="text-xs text-zinc-400 line-through block mt-1">4,200 ج.م</span>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-zinc-100 mb-8 font-medium">
+                            <li class="flex items-center gap-2.5"><span class="text-amber-400 font-bold">✓</span><span data-i18n="pkg2F1"><strong>4 فيديوهات Reels</strong> سينمائية متكاملة</span></li>
+                            <li class="flex items-center gap-2.5"><span class="text-amber-400 font-bold">✓</span><span data-i18n="pkg2F2">أفكار Hooks متنوعة لرفع نسبة التحويل</span></li>
+                            <li class="flex items-center gap-2.5"><span class="text-amber-400 font-bold">✓</span><span data-i18n="pkg2F3">تعديلان مجانيان لكل فيديو لضمان الكمال</span></li>
+                            <li class="flex items-center gap-2.5"><span class="text-amber-400 font-bold">✓</span><span data-i18n="pkg2F4">أولوية في التنفيذ والتسليم خلال 48 ساعة</span></li>
+                            <li class="flex items-center gap-2.5"><span class="text-amber-400 font-bold">✓</span><span data-i18n="pkg2F5">بوستر إعلاني ثابت مجاناً مع الباقة 🎁</span></li>
+                        </ul>
+                    </div>
+
+                    <button onclick="orderPackageWhatsApp('باقة النمو (4 ريلز - 3,400 ج.م)')" class="w-full py-4 px-5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-zinc-950 font-black text-sm shadow-xl shadow-amber-500/25 transition flex items-center justify-center gap-2">
+                        <span data-i18n="orderBtn">اطلب الباقة عبر واتساب</span>
+                        <span>🚀</span>
+                    </button>
+                </div>
+
+                <!-- Package 3: Pro Scale -->
+                <div class="glass-card rounded-3xl p-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-violet-400">Pro Scale</span>
+                            <span class="px-3 py-1 rounded-full bg-violet-500/15 text-violet-300 text-xs font-bold border border-violet-500/30" data-i18n="pkg3Tag">سيطرة كاملة</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-2" data-i18n="pkg3Name">الباقة الشهرية</h3>
+                        <p class="text-xs text-zinc-400 mb-6" data-i18n="pkg3Sub">محتوى إعلاني مستمر طوال الشهر للبراندات اللي بتستهدف التوسع السريع.</p>
+                        
+                        <div class="mb-6 pb-6 border-b border-white/10">
+                            <span class="text-4xl font-black text-white">6,000</span>
+                            <span class="text-sm font-extrabold text-amber-400 mr-1" data-i18n="currency">ج.م</span>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-zinc-300 mb-8">
+                            <li class="flex items-center gap-2.5"><span class="text-violet-400 font-bold">✓</span><span data-i18n="pkg3F1"><strong>8 فيديوهات Reels</strong> شهرياً (فيديوهين أسبوعياً)</span></li>
+                            <li class="flex items-center gap-2.5"><span class="text-violet-400 font-bold">✓</span><span data-i18n="pkg3F2">خطة محتوى وسكريبتات كاملة لكل منتج</span></li>
+                            <li class="flex items-center gap-2.5"><span class="text-violet-400 font-bold">✓</span><span data-i18n="pkg3F3">3 بوسترات CGI فاخرة لحملات الريتارجتنج</span></li>
+                            <li class="flex items-center gap-2.5"><span class="text-violet-400 font-bold">✓</span><span data-i18n="pkg3F4">متابعة مباشرة مع مدير حساب مخصص</span></li>
+                        </ul>
+                    </div>
+
+                    <button onclick="orderPackageWhatsApp('الباقة الشهرية Pro Scale (8 ريلز - 6,000 ج.م)')" class="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-extrabold text-sm shadow-lg shadow-violet-600/20 transition flex items-center justify-center gap-2">
+                        <span data-i18n="orderBtn">اطلب الباقة عبر واتساب</span>
+                        <span>💬</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- FOOTER WITH DIRECT SOCIAL & WHATSAPP LINKS                -->
+    <!-- ========================================================= -->
+    <footer class="py-14 px-4 sm:px-6 border-t border-white/10 bg-[#070709]">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-right">
+                <span class="text-2xl font-black text-white">Vibe<span class="text-amber-400">Studio</span></span>
+                <p class="text-xs text-zinc-400 mt-1" data-i18n="footerTagline">وكالة إنتاج إعلانات الـ CGI والذكاء الاصطناعي للبراندات الطموحة في مصر والشرق الأوسط.</p>
+            </div>
+
+            <!-- Social & Direct Contact Buttons -->
+            <div class="flex items-center gap-3 flex-wrap justify-center">
+                <a id="footer-whatsapp" href="https://wa.me/201117180228" target="_blank" class="px-4 py-2.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500 hover:text-zinc-950 text-emerald-400 border border-emerald-500/30 text-xs font-extrabold transition flex items-center gap-2">
+                    <span>WhatsApp (01117180228)</span>
+                    <span>💬</span>
+                </a>
+                <a id="footer-instagram" href="https://instagram.com" target="_blank" class="px-4 py-2.5 rounded-xl bg-pink-500/15 hover:bg-pink-500 hover:text-white text-pink-400 border border-pink-500/30 text-xs font-extrabold transition flex items-center gap-2">
+                    <span>Instagram</span>
+                    <span>📸</span>
+                </a>
+                <a id="footer-tiktok" href="https://tiktok.com" target="_blank" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white hover:text-zinc-950 text-white border border-white/15 text-xs font-extrabold transition flex items-center gap-2">
+                    <span>TikTok</span>
+                    <span>🎵</span>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-5xl mx-auto mt-8 pt-6 border-t border-white/5 text-center text-[11px] text-zinc-500">
+            © 2026 VibeStudio Agency. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- FLOATING WHATSAPP & QUICK EDIT MODE BUTTONS               -->
+    <!-- ========================================================= -->
+    <a id="floating-whatsapp-btn" href="https://wa.me/201117180228" onclick="event.preventDefault(); orderPackageWhatsApp('استفسار سريع من الموقع');" target="_blank" aria-label="WhatsApp" class="fixed bottom-5 left-5 z-40 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 px-4 py-3 rounded-2xl shadow-2xl shadow-emerald-500/30 flex items-center gap-2 text-xs font-black transition transform hover:scale-105">
+        <span>💬</span>
+        <span data-i18n="floatingWaBtn">واتساب مباشر</span>
+    </a>
+
+    <button onclick="toggleQuickEditModal()" class="fixed bottom-5 right-5 z-40 bg-zinc-900/95 hover:bg-violet-600 text-white border border-white/15 px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2 text-xs font-extrabold backdrop-blur-md transition group">
+        <span>⚙️</span>
+        <span data-i18n="quickEditBtn">لوحة تخصيص سريعة</span>
+    </button>
+
+    <div id="quick-edit-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-[#141418] border-t sm:border border-white/15 w-full max-w-xl rounded-t-3xl sm:rounded-3xl p-5 sm:p-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                <div>
+                    <h3 class="text-lg font-black text-white">لوحة تخصيص البورتفوليو السريعة ⚙️</h3>
+                    <p class="text-xs text-zinc-400">اربط فيديوهاتك الحقيقية ورقم الواتساب، ثم صدّر الصفحة كملف جاهز للنشر</p>
+                </div>
+                <button onclick="toggleQuickEditModal()" class="w-8 h-8 rounded-full bg-white/10 text-zinc-300 flex items-center justify-center">✕</button>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Contact Settings -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div>
+                        <label class="block text-[11px] text-zinc-400 mb-1 font-bold">رقم الواتساب (بكود الدولة)</label>
+                        <input type="text" id="edit-whatsapp" dir="ltr" value="201117180228" placeholder="201117180228" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-white outline-none focus:border-violet-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] text-zinc-400 mb-1 font-bold">رابط إنستغرام</label>
+                        <input type="text" id="edit-insta" dir="ltr" placeholder="https://instagram.com/vibestudio" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-white outline-none focus:border-violet-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] text-zinc-400 mb-1 font-bold">رابط تيك توك</label>
+                        <input type="text" id="edit-tiktok" dir="ltr" placeholder="https://tiktok.com/@vibestudio" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-white outline-none focus:border-violet-500">
+                    </div>
+                </div>
+
+                <!-- 3 Portfolio Video Links / Local Uploads -->
+                <div class="space-y-3 pt-2">
+                    <p class="text-xs font-extrabold text-amber-400">روابط أو ملفات الفيديوهات الثلاثة (Reels / TikTok / MP4):</p>
+                    <div id="edit-videos-list" class="space-y-3">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="pt-3 border-t border-white/10 flex flex-col sm:flex-row gap-2.5">
+                    <button onclick="saveQuickEdits()" class="flex-1 bg-violet-600 hover:bg-violet-500 text-white font-extrabold text-xs py-3 rounded-xl transition">
+                        حفظ التعديلات في الصفحة ✅
+                    </button>
+                    <button onclick="exportUpdatedHTML()" class="flex-1 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-black text-xs py-3 rounded-xl transition flex items-center justify-center gap-1.5">
+                        <span>تحميل الملف النهائي (portfolio.html)</span>
+                        <span>📥</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300">
+        <div class="bg-emerald-500 text-zinc-950 font-extrabold text-xs px-4 py-2.5 rounded-full shadow-2xl">
+            <span id="toast-text">تم الحفظ بنجاح!</span>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- JAVASCRIPT: BILINGUAL ENGINE, PORTFOLIO & QUICK EDITOR    -->
+    <!-- ========================================================= -->
+    <script>
+        // ---------------------------------------------------------
+        // 1. DEFAULT AGENCY CONFIG (Saved in localStorage or exported)
+        // ---------------------------------------------------------
+        const DEFAULT_AGENCY_DATA = {
+            whatsapp: '201117180228',
+            instagram: 'https://instagram.com',
+            tiktok: 'https://tiktok.com',
+            reels: [
+                {
+                    id: 'r1',
+                    category: 'watches',
+                    badgeAr: 'ساعات فاخرة • CGI',
+                    badgeEn: 'Luxury Watches • CGI',
+                    titleAr: 'تشريح الساعة واختبار المياه',
+                    titleEn: 'Watch Exploded View & Water Impact',
+                    descAr: 'لقطة 3D سينمائية تُظهر مقاومة المياه والتروس الميكانيكية الداخلية بدقة 8K.',
+                    descEn: '8K 3D cinematic commercial showcasing water resistance and internal mechanical gears.',
+                    duration: '0:15',
+                    videoUrl: '',
+                    localDataUrl: ''
+                },
+                {
+                    id: 'r2',
+                    category: 'clothing',
+                    badgeAr: 'ملابس Streetwear • AI',
+                    badgeEn: 'Streetwear • AI Motion',
+                    titleAr: 'هودي طائر وتغيير الألوان الفوري',
+                    titleEn: 'Floating Hoodie & Dynamic Color Shift',
+                    descAr: 'حركة كاميرا سريعة (Speed Ramp) تستعرض خامة القطن الثقيلة وتبديل الألوان مع الإيقاع.',
+                    descEn: 'Fast speed-ramp camera orbit highlighting heavyweight cotton texture and beat-synced color shifts.',
+                    duration: '0:12',
+                    videoUrl: '',
+                    localDataUrl: ''
+                },
+                {
+                    id: 'r3',
+                    category: 'perfumes',
+                    badgeAr: 'عطور • Slow-Motion',
+                    badgeEn: 'Perfumes • Slow-Motion',
+                    titleAr: 'تجميع مكونات العود والرذاذ الذهبي',
+                    titleEn: 'Oud Ingredients Convergence & Golden Mist',
+                    descAr: 'تطاير العنبر والعود في الهواء لتكوين زجاجة العطر مع رذاذ ذهبي فائق البطء.',
+                    descEn: 'Swirling amber and oud embers converging into the bottle followed by luminous slow-mo mist.',
+                    duration: '0:15',
+                    videoUrl: '',
+                    localDataUrl: ''
+                }
+            ]
+        };
+
+        // Check if exported HTML already embedded custom data
+        let agencyData = window.__EMBEDDED_AGENCY_DATA__ || JSON.parse(localStorage.getItem('vibestudio_portfolio_v1')) || DEFAULT_AGENCY_DATA;
+        if (!agencyData.whatsapp || agencyData.whatsapp === '201000000000') {
+            agencyData.whatsapp = '201117180228';
+        }
+        let currentLang = 'ar';
+        let currentCategory = 'all';
+
+        // ---------------------------------------------------------
+        // 2. BILINGUAL DICTIONARY (ARABIC RTL / ENGLISH LTR)
+        // ---------------------------------------------------------
+        const i18n = {
+            ar: {
+                navTagline: 'إعلانات CGI & AI التجارية',
+                navPortfolio: 'أعمالنا',
+                navWhy: 'لماذا نحن؟',
+                navWorkflow: 'كيف نعمل؟',
+                navPricing: 'الباقات',
+                navCta: 'احجز إعلانك',
+                heroBadge: 'الجيل الجديد من الإعلانات التجارية في مصر 🇪🇬',
+                heroTitle: 'نحوّل منتجاتك لإعلانات سينمائية <span class="bg-gradient-to-r from-violet-400 via-indigo-300 to-amber-400 bg-clip-text text-transparent">تضاعف مبيعاتك</span>',
+                heroSubtitle: 'نصنع إعلانات CGI و AI فائقة الواقعية لبراندات الساعات، الملابس، والعطور — بدون استوديوهات مكلفة أو معدات تصوير، والتسليم خلال 48 ساعة فقط.',
+                heroBtnPrimary: 'شاهد أعمالنا',
+                heroBtnSecondary: 'احجز إعلانك الآن',
+                nicheWatches: 'الساعات الفاخرة',
+                nicheClothing: 'ملابس الـ Streetwear',
+                nichePerfumes: 'العطور ومستحضراتها',
+                portEyebrow: 'معرض الأعمال المختارة',
+                portTitle: 'إعلانات مصممة لخطف الانتباه من أول ثانية',
+                portDesc: 'اضغط على أي فيديو لمعاينة الفكرة الإخراجية أو تشغيل المقطع التجريبي مباشرة',
+                filterAll: 'الكل',
+                filterWatches: 'ساعات ⌚️',
+                filterClothing: 'ملابس 🧥',
+                filterPerfumes: 'عطور 🧴',
+                whyEyebrow: 'المقارنة الحاسمة',
+                whyTitle: 'لماذا تختار براندات مصر VibeStudio؟',
+                whyDesc: 'الفرق بين التصوير التقليدي المكلف وإعلانات الـ CGI الحديثة',
+                tradTitle: 'التصوير التقليدي القديم',
+                tradBadge: 'تكلفة ووقت مهدور',
+                trad1: 'تكلفة إيجار استوديو، موديلز، ومعدات تصل لـ 15,000+ جنيه للإعلان الواحد.',
+                trad2: 'انتظار من أسبوعين لشهر كامل للتصوير والمونتاج والتعديلات.',
+                trad3: 'أفكار مكررة يمر عليها العميل في ثانية بدون أي تفاعل (Low CTR).',
+                trad4: 'صعوبة تغيير الألوان أو الخلفيات بعد انتهاء يوم التصوير.',
+                vibeBadge: 'الأذكى والأسرع',
+                vibe1: '<strong>توفير حتى 70% من الميزانية:</strong> توجيه كامل لفلوسك في الإعلانات الممولة (Ads).',
+                vibe2: '<strong>تسليم فائق السرعة خلال 48 ساعة:</strong> ابعت صور منتجك بالموبايل واستلم إعلانك جاهز.',
+                vibe3: '<strong>إبداع بصري بلا حدود:</strong> تفكيك ساعات في الهواء، هوديز تغير ألوانها، وعطور وسط الطبيعة.',
+                vibe4: '<strong>أعلى عائد إعلاني (High ROAS):</strong> هوك بصري (Hook) يوقف سكرول العميل في أول ثانيتين.',
+                workEyebrow: 'خطوات بسيطة وسريعة',
+                workTitle: 'كيف نعمل؟ (من صورة موبايل لإعلان عالمي)',
+                step1Title: 'أرسل صور منتجك بالموبايل',
+                step1Desc: 'صور منتجك بإضاءة واضحة من هاتفك وابعتها لينا على واتساب مع اللوجو الخاص بالبراند.',
+                step2Title: 'بناء المشهد السينمائي بالـ CGI',
+                step2Desc: 'نولّد مشاهد 3D وحركة كاميرا مستحيلة التصوير واقعياً تبرز فخامة وخامة منتجك.',
+                step3Title: 'مونتاج ومؤثرات صوتية',
+                step3Desc: 'تقطيع سريع (Speed Ramp) متزامن مع مؤثرات صوتية عميقة ونصوص بيعية تشد العميل.',
+                step4Title: 'استلام الفيديو خلال 48 ساعة',
+                step4Desc: 'تستلم الفيديو بصيغة 9:16 جاهز للنشر فوراً على Reels و TikTok وحملات الممول.',
+                priceEyebrow: 'استثمار ذكي لبراندك',
+                priceTitle: 'باقات الإنتاج الإعلاني (بالجنيه المصري)',
+                priceDesc: 'اختر الباقة المناسبة لحجم مبيعاتك وابدأ التنفيذ اليوم عبر واتساب',
+                pkg1Tag: 'للتجربة والانطلاق',
+                pkg1Name: 'باقة التجربة',
+                pkg1Sub: 'مثالية لاختبار قوة إعلانات الـ CGI على منتجك الأكثر مبيعاً.',
+                currency: 'ج.م',
+                pkg1F1: '<strong>2 فيديو Reels</strong> إعلاني احترافي (9:16)',
+                pkg1F2: 'مشاهد CGI & AI مخصصة لمنتجك',
+                pkg1F3: 'هندسة صوتية + كتابة نصوص بيعية',
+                pkg1F4: 'تسليم أول فيديو خلال 48 ساعة',
+                mostPopular: '🔥 الأكثر طلباً للبراندات',
+                pkg2Tag: 'توفير 20%',
+                pkg2Name: 'باقة النمو',
+                pkg2Sub: 'الاختيار الأفضل لحملات الإعلانات الممولة واختبار أكتر من Hook بيعي.',
+                pkg2F1: '<strong>4 فيديوهات Reels</strong> سينمائية متكاملة',
+                pkg2F2: 'أفكار Hooks متنوعة لرفع نسبة التحويل',
+                pkg2F3: 'تعديلان مجانيان لكل فيديو لضمان الكمال',
+                pkg2F4: 'أولوية في التنفيذ والتسليم خلال 48 ساعة',
+                pkg2F5: 'بوستر إعلاني ثابت مجاناً مع الباقة 🎁',
+                pkg3Tag: 'سيطرة كاملة',
+                pkg3Name: 'الباقة الشهرية',
+                pkg3Sub: 'محتوى إعلاني مستمر طوال الشهر للبراندات اللي بتستهدف التوسع السريع.',
+                pkg3F1: '<strong>8 فيديوهات Reels</strong> شهرياً (فيديوهين أسبوعياً)',
+                pkg3F2: 'خطة محتوى وسكريبتات كاملة لكل منتج',
+                pkg3F3: '3 بوسترات CGI فاخرة لحملات الريتارجتنج',
+                pkg3F4: 'متابعة مباشرة مع مدير حساب مخصص',
+                orderBtn: 'اطلب الباقة عبر واتساب',
+                footerTagline: 'وكالة إنتاج إعلانات الـ CGI والذكاء الاصطناعي للبراندات الطموحة في مصر والشرق الأوسط.',
+                floatingWaBtn: 'واتساب مباشر',
+                quickEditBtn: 'لوحة تخصيص سريعة'
+            },
+            en: {
+                navTagline: 'CGI & AI Commercials',
+                navPortfolio: 'Portfolio',
+                navWhy: 'Why Us?',
+                navWorkflow: 'Workflow',
+                navPricing: 'Packages',
+                navCta: 'Book Now',
+                heroBadge: 'Next-Gen Commercial Production in Egypt 🇪🇬',
+                heroTitle: 'Turn Your Products Into <span class="bg-gradient-to-r from-violet-400 via-indigo-300 to-amber-400 bg-clip-text text-transparent">High-Converting CGI Commercials</span>',
+                heroSubtitle: 'We craft hyper-realistic CGI & AI video ads for Watches, Streetwear, and Perfumes — zero expensive studio shoots, delivered in 48 hours.',
+                heroBtnPrimary: 'Watch Our Work',
+                heroBtnSecondary: 'Book Your Ad Now',
+                nicheWatches: 'Luxury Watches',
+                nicheClothing: 'Streetwear & Apparel',
+                nichePerfumes: 'Luxury Perfumes',
+                portEyebrow: 'Selected Showcase',
+                portTitle: 'Commercials Engineered to Stop the Scroll',
+                portDesc: 'Tap any reel below to preview the creative direction or play the showcase video',
+                filterAll: 'All',
+                filterWatches: 'Watches ⌚️',
+                filterClothing: 'Streetwear 🧥',
+                filterPerfumes: 'Perfumes 🧴',
+                whyEyebrow: 'The Unfair Advantage',
+                whyTitle: 'Why Top Brands Choose VibeStudio?',
+                whyDesc: 'Traditional studio shoots vs. modern AI-driven CGI commercials',
+                tradTitle: 'Traditional Studio Shoot',
+                tradBadge: 'Slow & Expensive',
+                trad1: 'Studio rentals, models, and gear cost 15,000+ EGP per single commercial.',
+                trad2: '2 to 4 weeks of waiting for shooting, editing, and revisions.',
+                trad3: 'Repetitive visuals viewers scroll past in 1 second (Low CTR).',
+                trad4: 'Impossible to swap product colors or environments after wrap.',
+                vibeBadge: 'Faster & Higher ROAS',
+                vibe1: '<strong>Save up to 70% on production:</strong> Put your budget directly into scaling paid ads.',
+                vibe2: '<strong>48-Hour Rapid Delivery:</strong> Send smartphone photos of your product and get a cinema-grade ad.',
+                vibe3: '<strong>Limitless Visual Creativity:</strong> Exploded watch mechanics, color-shifting hoodies, and golden perfume mist.',
+                vibe4: '<strong>Built for High ROAS:</strong> Scroll-stopping visual hooks engineered for the first 2 seconds.',
+                workEyebrow: 'Simple & Fast Process',
+                workTitle: 'How It Works (From Phone Photo to Viral Ad)',
+                step1Title: 'Send Smartphone Product Photos',
+                step1Desc: 'Snap clear photos of your product on your phone and send them via WhatsApp with your logo.',
+                step2Title: '3D & CGI Scene Generation',
+                step2Desc: 'We build impossible camera movements and realistic lighting that elevate your product.',
+                step3Title: 'Speed-Ramp Editing & SFX',
+                step3Desc: 'Beat-synced cuts, deep bass sound design, and high-converting ad copy overlays.',
+                step4Title: '48-Hour Ad-Ready Delivery',
+                step4Desc: 'Receive vertical 9:16 master files ready for Instagram Reels, TikTok, and Meta Ads.',
+                priceEyebrow: 'Smart Brand Investment',
+                priceTitle: 'Commercial Production Packages (EGP)',
+                priceDesc: 'Pick the package that fits your growth stage and launch via WhatsApp today',
+                pkg1Tag: 'Test & Launch',
+                pkg1Name: 'Starter Pack',
+                pkg1Sub: 'Ideal for testing CGI commercial performance on your hero product.',
+                currency: 'EGP',
+                pkg1F1: '<strong>2 Pro Commercial Reels</strong> (9:16 vertical)',
+                pkg1F2: 'Custom CGI & AI scenes tailored to your product',
+                pkg1F3: 'Sound design + direct-response ad copy',
+                pkg1F4: 'First video delivered within 48 hours',
+                mostPopular: '🔥 Most Popular for Brands',
+                pkg2Tag: 'Save 20%',
+                pkg2Name: 'Growth Pack',
+                pkg2Sub: 'Best for paid ad campaigns and A/B testing multiple scroll-stopping hooks.',
+                pkg2F1: '<strong>4 Cinema-Grade Reels</strong> with full CGI',
+                pkg2F2: 'Multiple visual hooks to maximize conversion rate',
+                pkg2F3: '2 free revision rounds per video',
+                pkg2F4: 'Priority 48-hour delivery turnaround',
+                pkg2F5: '1 Free High-Contrast CGI Ad Poster included 🎁',
+                pkg3Tag: 'Full Scale',
+                pkg3Name: 'Pro Scale Monthly',
+                pkg3Sub: 'Consistent monthly creative pipeline for rapidly scaling e-commerce brands.',
+                pkg3F1: '<strong>8 Commercial Reels</strong> monthly (2 per week)',
+                pkg3F2: 'Full creative strategy & scripts per product',
+                pkg3F3: '3 Luxury CGI posters for retargeting campaigns',
+                pkg3F4: 'Direct priority access with dedicated creative lead',
+                orderBtn: 'Order via WhatsApp',
+                footerTagline: 'CGI & AI Commercial Video Agency for ambitious brands in Egypt & MENA.',
+                floatingWaBtn: 'Direct WhatsApp',
+                quickEditBtn: 'Quick Edit Mode'
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const htmlEl = document.documentElement;
+            htmlEl.setAttribute('lang', currentLang);
+            htmlEl.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+            document.getElementById('lang-toggle-label').textContent = currentLang === 'ar' ? 'EN' : 'عربي';
+
+            const dict = i18n[currentLang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) el.innerHTML = dict[key];
+            });
+
+            renderPortfolio();
+        }
+
+        // ---------------------------------------------------------
+        // 3. INTERACTIVE PORTFOLIO SHOWCASE RENDERER
+        // ---------------------------------------------------------
+        function getReelVisualMockup(reel) {
+            // If user uploaded a local video or pasted an MP4 link
+            const activeSrc = reel.localDataUrl || (reel.videoUrl && reel.videoUrl.endsWith('.mp4') ? reel.videoUrl : '');
+            if (activeSrc) {
+                return `
+                    <video src="${activeSrc}" class="w-full h-full object-cover" autoplay loop muted playsinline></video>
+                `;
+            }
+
+            // Sleek Bespoke Animated CGI Visual Mockups per Niche
+            if (reel.category === 'watches') {
+                return `
+                    <div class="w-full h-full bg-gradient-to-b from-slate-900 via-[#0c1220] to-black flex flex-col items-center justify-center p-6 relative">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(56,189,248,0.22),transparent_65%)]"></div>
+                        <!-- Animated Watch SVG -->
+                        <div class="animate-float relative z-10">
+                            <svg class="w-36 h-36 drop-shadow-[0_15px_30px_rgba(56,189,248,0.35)]" viewBox="0 0 120 120" fill="none">
+                                <rect x="44" y="6" width="32" height="24" rx="4" fill="#334155" stroke="#94a3b8" stroke-width="1.5"/>
+                                <rect x="44" y="90" width="32" height="24" rx="4" fill="#334155" stroke="#94a3b8" stroke-width="1.5"/>
+                                <circle cx="60" cy="60" r="36" fill="#0f172a" stroke="url(#watchGold)" stroke-width="4"/>
+                                <circle cx="60" cy="60" r="29" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="3 3"/>
+                                <line x1="60" y1="60" x2="60" y2="39" stroke="#f8fafc" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="60" y1="60" x2="76" y2="60" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="60" cy="60" r="3" fill="#f59e0b"/>
+                                <defs>
+                                    <linearGradient id="watchGold" x1="20" y1="20" x2="100" y2="100">
+                                        <stop stop-color="#e2e8f0"/>
+                                        <stop offset="0.5" stop-color="#f59e0b"/>
+                                        <stop offset="1" stop-color="#64748b"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="mt-4 text-[10px] font-mono uppercase tracking-widest text-sky-300/80 bg-sky-500/10 border border-sky-400/20 px-3 py-1 rounded-full">8K CGI • EXPLODED VIEW</span>
+                    </div>
+                `;
+            }
+
+            if (reel.category === 'clothing') {
+                return `
+                    <div class="w-full h-full bg-gradient-to-b from-violet-950/80 via-[#120d1d] to-black flex flex-col items-center justify-center p-6 relative">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(139,92,246,0.28),transparent_65%)]"></div>
+                        <!-- Animated Color-Shifting Hoodie SVG -->
+                        <div class="animate-hoodie relative z-10">
+                            <svg class="w-40 h-40 drop-shadow-[0_18px_35px_rgba(139,92,246,0.4)]" viewBox="0 0 120 120" fill="none">
+                                <path d="M42 26C42 18 78 18 78 26L98 44L88 62L80 54V96H40V54L32 62L22 44L42 26Z" fill="#1e1b4b" stroke="#a78bfa" stroke-width="2.2" stroke-linejoin="round"/>
+                                <path d="M46 25C52 34 68 34 74 25" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round"/>
+                                <rect x="47" y="66" width="26" height="16" rx="4" stroke="#8b5cf6" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <span class="mt-4 text-[10px] font-mono uppercase tracking-widest text-violet-300/90 bg-violet-500/15 border border-violet-400/25 px-3 py-1 rounded-full">SPEED RAMP • COLOR SHIFT</span>
+                    </div>
+                `;
+            }
+
+            return `
+                <div class="w-full h-full bg-gradient-to-b from-amber-950/70 via-[#17110a] to-black flex flex-col items-center justify-center p-6 relative">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(245,158,11,0.28),transparent_65%)]"></div>
+                    <!-- Animated Luxury Perfume Bottle SVG -->
+                    <div class="animate-float relative z-10">
+                        <svg class="w-36 h-36 drop-shadow-[0_18px_35px_rgba(245,158,11,0.35)]" viewBox="0 0 120 120" fill="none">
+                            <rect x="48" y="16" width="24" height="14" rx="3" fill="#f59e0b"/>
+                            <rect x="53" y="30" width="14" height="8" fill="#d97706"/>
+                            <rect x="34" y="38" width="52" height="64" rx="10" fill="#18181b" stroke="#f59e0b" stroke-width="2.5"/>
+                            <rect x="42" y="50" width="36" height="36" rx="5" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.45)" stroke-width="1"/>
+                            <circle cx="60" cy="68" r="7" stroke="#fbbf24" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <span class="mt-4 text-[10px] font-mono uppercase tracking-widest text-amber-300/90 bg-amber-500/15 border border-amber-400/25 px-3 py-1 rounded-full">SLOW-MO MIST • 8K CGI</span>
+                </div>
+            `;
+        }
+
+        function filterPortfolio(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.port-tab').forEach(btn => {
+                const isSelected = btn.dataset.cat === cat;
+                btn.className = isSelected
+                    ? 'port-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-extrabold bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-600/25 transition'
+                    : 'port-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-extrabold bg-white/5 hover:bg-white/10 text-zinc-300 border border-white/10 transition';
+            });
+            renderPortfolio();
+        }
+
+        function renderPortfolio() {
+            const grid = document.getElementById('portfolio-grid');
+            const filtered = currentCategory === 'all'
+                ? agencyData.reels
+                : agencyData.reels.filter(r => r.category === currentCategory);
+
+            grid.innerHTML = filtered.map(reel => {
+                const badge = currentLang === 'ar' ? reel.badgeAr : reel.badgeEn;
+                const title = currentLang === 'ar' ? reel.titleAr : reel.titleEn;
+                const desc = currentLang === 'ar' ? reel.descAr : reel.descEn;
+                const watchLabel = currentLang === 'ar' ? 'معاينة الإعلان' : 'Preview Reel';
+
+                return `
+                    <div onclick="openVideoModal('${reel.id}')" class="group cursor-pointer glass-card rounded-3xl p-3 border border-white/10 hover:border-amber-500/40 transition duration-300 shadow-2xl">
+                        <div class="reel-frame bg-zinc-950">
+                            ${getReelVisualMockup(reel)}
+
+                            <!-- Top Overlay Pill -->
+                            <div class="absolute top-3.5 right-3.5 left-3.5 flex items-center justify-between z-20">
+                                <span class="px-3 py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/10 text-[11px] font-extrabold text-white">
+                                    ${badge}
+                                </span>
+                                <span class="px-2.5 py-1 rounded-full bg-black/65 backdrop-blur-md text-[11px] font-mono font-bold text-amber-300">
+                                    ${reel.duration}
+                                </span>
+                            </div>
+
+                            <!-- Center Play Button -->
+                            <div class="absolute inset-0 flex items-center justify-center z-20 bg-black/20 group-hover:bg-black/10 transition">
+                                <div class="pulse-ring relative w-14 h-14 rounded-full bg-amber-500 text-zinc-950 flex items-center justify-center shadow-2xl group-hover:scale-110 transition">
+                                    <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Caption Overlay -->
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/85 to-transparent p-5 pt-12 z-20">
+                                <h3 class="text-base sm:text-lg font-black text-white mb-1">${title}</h3>
+                                <p class="text-xs text-zinc-300 line-clamp-2 leading-relaxed mb-3">${desc}</p>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-extrabold text-amber-400">
+                                    <span>${watchLabel}</span>
+                                    <span>↗</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ---------------------------------------------------------
+        // 4. VIDEO LIGHTBOX MODAL
+        // ---------------------------------------------------------
+        function openVideoModal(reelId) {
+            const reel = agencyData.reels.find(r => r.id === reelId);
+            if (!reel) return;
+
+            const title = currentLang === 'ar' ? reel.titleAr : reel.titleEn;
+            const desc = currentLang === 'ar' ? reel.descAr : reel.descEn;
+            const ctaText = currentLang === 'ar' ? 'اطلب إعلان مشابه لمنتجك عبر واتساب' : 'Request a Similar Commercial on WhatsApp';
+
+            const activeVideo = reel.localDataUrl || reel.videoUrl;
+            let mediaHTML = '';
+
+            if (activeVideo && (reel.localDataUrl || activeVideo.endsWith('.mp4'))) {
+                mediaHTML = `<video src="${activeVideo}" class="w-full rounded-2xl aspect-[9/16] max-h-[60vh] object-cover bg-black" controls autoplay playsinline></video>`;
+            } else if (activeVideo) {
+                // External Instagram / TikTok / YouTube link
+                mediaHTML = `
+                    <div class="reel-frame max-h-[55vh] mx-auto bg-zinc-950 border border-white/10 flex flex-col items-center justify-center p-6 text-center">
+                        ${getReelVisualMockup(reel)}
+                        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm flex flex-col items-center justify-center p-6 z-30">
+                            <span class="text-3xl mb-3">📲</span>
+                            <p class="text-sm font-extrabold text-white mb-4">${currentLang === 'ar' ? 'هذا الفيديو مستضاف على منصتنا الاجتماعية' : 'Watch full reel on our social channel'}</p>
+                            <a href="${activeVideo}" target="_blank" class="px-5 py-3 rounded-xl bg-amber-500 text-zinc-950 font-black text-xs shadow-lg">
+                                ${currentLang === 'ar' ? 'فتح الفيديو في نافذة جديدة ↗' : 'Open External Reel ↗'}
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else {
+                mediaHTML = `
+                    <div class="reel-frame max-h-[54vh] mx-auto border border-white/10">
+                        ${getReelVisualMockup(reel)}
+                    </div>
+                `;
+            }
+
+            document.getElementById('video-modal-content').innerHTML = `
+                ${mediaHTML}
+                <div class="mt-4">
+                    <h3 class="text-lg font-black text-white mb-1">${title}</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed mb-4">${desc}</p>
+                    <button onclick="orderPackageWhatsApp('${reel.titleAr}')" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-400 text-zinc-950 font-black text-xs sm:text-sm shadow-lg transition">
+                        ${ctaText} 💬
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('video-modal').classList.remove('hidden');
+        }
+
+        function closeVideoModal() {
+            document.getElementById('video-modal').classList.add('hidden');
+            document.getElementById('video-modal-content').innerHTML = '';
+        }
+
+        // ---------------------------------------------------------
+        // 5. WHATSAPP & SOCIAL LINKS HANDLER
+        // ---------------------------------------------------------
+        function orderPackageWhatsApp(packageName) {
+            const cleanPhone = (agencyData.whatsapp || '201117180228').replace(/[^0-9]/g, '');
+            const msg = currentLang === 'ar'
+                ? `أهلاً فريق VibeStudio 👋✨\nشفت البورتفوليو بتاعكم وحابب أستفسر وأطلب: *${packageName}*\nاسم البراند بتاعي: `
+                : `Hi VibeStudio Team 👋✨\nI checked your portfolio and I'd like to inquire about: *${packageName}*\nMy Brand Name: `;
+            const url = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+        }
+
+        function syncSocialLinks() {
+            const cleanPhone = (agencyData.whatsapp || '201117180228').replace(/[^0-9]/g, '');
+            const waUrl = `https://wa.me/${cleanPhone}`;
+            document.getElementById('footer-whatsapp').href = waUrl;
+            const floatingWa = document.getElementById('floating-whatsapp-btn');
+            if (floatingWa) floatingWa.href = waUrl;
+            document.getElementById('footer-instagram').href = agencyData.instagram || 'https://instagram.com';
+            document.getElementById('footer-tiktok').href = agencyData.tiktok || 'https://tiktok.com';
+        }
+
+        // ---------------------------------------------------------
+        // 6. QUICK EDIT MODE & SELF-CONTAINED HTML EXPORT
+        // ---------------------------------------------------------
+        function toggleQuickEditModal() {
+            const modal = document.getElementById('quick-edit-modal');
+            const isHidden = modal.classList.contains('hidden');
+            if (isHidden) {
+                document.getElementById('edit-whatsapp').value = agencyData.whatsapp;
+                document.getElementById('edit-insta').value = agencyData.instagram;
+                document.getElementById('edit-tiktok').value = agencyData.tiktok;
+
+                const list = document.getElementById('edit-videos-list');
+                list.innerHTML = agencyData.reels.map((r, idx) => `
+                    <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-3 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-extrabold text-white">${idx + 1}. ${r.titleAr}</span>
+                            <span class="text-[10px] text-zinc-400">${r.badgeAr}</span>
+                        </div>
+                        <input type="text" id="edit-reel-url-${r.id}" value="${r.videoUrl || ''}" dir="ltr" placeholder="ضع رابط Instagram Reel / TikTok / MP4 هنا..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-zinc-200 outline-none focus:border-violet-500">
+                        <div class="flex items-center justify-between gap-2">
+                            <label class="text-[11px] font-bold text-violet-400 hover:text-violet-300 cursor-pointer flex items-center gap-1">
+                                <span>📁 أو ارفع ملف فيديو MP4 من جهازك</span>
+                                <input type="file" accept="video/mp4,video/quicktime" onchange="handleLocalVideoUpload(event, '${r.id}')" class="hidden">
+                            </label>
+                            ${r.localDataUrl ? `<span class="text-[10px] text-emerald-400 font-bold">✓ فيديو مرفوع</span>` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            }
+            modal.classList.toggle('hidden');
+        }
+
+        function handleLocalVideoUpload(event, reelId) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const reel = agencyData.reels.find(r => r.id === reelId);
+                if (reel) {
+                    reel.localDataUrl = e.target.result;
+                    showToast('تم تحميل الفيديو للمعاينة! اضغط حفظ ✅');
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function saveQuickEdits() {
+            agencyData.whatsapp = document.getElementById('edit-whatsapp').value.trim() || '201117180228';
+            agencyData.instagram = document.getElementById('edit-insta').value.trim() || 'https://instagram.com';
+            agencyData.tiktok = document.getElementById('edit-tiktok').value.trim() || 'https://tiktok.com';
+
+            agencyData.reels.forEach(r => {
+                const urlInput = document.getElementById(`edit-reel-url-${r.id}`);
+                if (urlInput) r.videoUrl = urlInput.value.trim();
+            });
+
+            try {
+                localStorage.setItem('vibestudio_portfolio_v1', JSON.stringify(agencyData));
+            } catch (e) {
+                // Fallback if large local video exceeds localStorage quota
+            }
+
+            syncSocialLinks();
+            renderPortfolio();
+            toggleQuickEditModal();
+            showToast('تم حفظ جميع تعديلات البورتفوليو بنجاح! 🎉');
+        }
+
+        function exportUpdatedHTML() {
+            saveQuickEdits();
+            // Inject current agencyData directly into a clone of the document so the exported file works anywhere
+            const docClone = document.documentElement.cloneNode(true);
+            const scriptTag = document.createElement('script');
+            scriptTag.textContent = `window.__EMBEDDED_AGENCY_DATA__ = ${JSON.stringify(agencyData)};`;
+            docClone.querySelector('head').appendChild(scriptTag);
+
+            const finalHTML = '<!DOCTYPE html>\n' + docClone.outerHTML;
+            const blob = new Blob([finalHTML], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'portfolio.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast('تم تصدير ملف portfolio.html جاهز للنشر! 📥');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-text').textContent = msg;
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 2500);
+        }
+
+        // Scroll Reveal Observer
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // Initialize Page
+        window.addEventListener('DOMContentLoaded', () => {
+            renderPortfolio();
+            syncSocialLinks();
+            initScrollReveal();
+        });
+    </script>
+</body>
+</html>
